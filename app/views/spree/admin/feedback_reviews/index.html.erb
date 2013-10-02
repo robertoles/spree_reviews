@@ -1,4 +1,6 @@
-<h1><%= link_to t('feedback_review_for', :review => @review.title ), admin_reviews_path %></h1>
+<% content_for :page_title do %>
+  <%= link_to t('feedback_review_for', :review => @review.title ), admin_reviews_path %>
+<% end %>
 
 
 <table class="index">

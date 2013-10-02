@@ -1,19 +1,11 @@
-<% render 'spree/admin/shared/product_sub_menu' %>
-<% if @review.reviewable.is_a?(Spree::Product) %>
+<% content_for :page_title do %>
+  <% if @review.reviewable.is_a?(Spree::Product) %>
   <h1><%= t(:editing_review_for_html, :link => link_to(@review.reviewable.name, product_path(@review.reviewable))) %></h1>
-<% else %>
-  <h1><%= t(:editing_review_for_html, :link => Spree::Config[:site_name]) %></h1>
+  <% else %>
+    <h1><%= t(:editing_review_for_html, :link => Spree::Config[:site_name]) %></h1>
+  <% end %>
 <% end %>
 
-<% unless @review.title.blank? %>
-<h2><%= @review.title %></h2>
-<% end %>
-
-<p>
-<%= simple_format(@review.review) %>
-</p>
-
-<h2><%= t(:edited_version) %></h2>
 
 <%= form_for([:admin, @review]) do |f| %>
   <%= render :partial => 'form', :locals  => { :f => f } %>

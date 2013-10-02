@@ -2,7 +2,9 @@
   <% render 'spree/admin/shared/product_sub_menu' %>
 <% end %>
 
-<h1><%= t('reviews') %></h1>
+<% content_for :page_title do %>
+  <%= t('reviews') %>
+<% end %>
 
 <table class="index responsive" width="100%">
   <colgroup>

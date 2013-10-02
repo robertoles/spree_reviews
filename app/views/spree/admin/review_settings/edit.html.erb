@@ -1,6 +1,8 @@
 <%= render :partial => 'spree/admin/shared/configuration_menu' %>
 
-<h1><%= t("spree_reviews.review_settings") %></h1>
+<% content_for :page_title do %>
+  <%= t("spree_reviews.review_settings") %>
+<% end %>
 
 <%= form_tag(admin_review_settings_path, :method => :put) do %>
   <p>
